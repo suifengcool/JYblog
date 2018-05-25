@@ -10,6 +10,7 @@ module.exports = () => {
     return async (ctx, next) => {
         try{
             await next()
+            if (ctx.response.status === 404 && !ctx.response.body) ctx.throw(404);
         }catch(err) {
             const statusCode = err.statusCode || err.status || 500
             const errMsg = err.message || '服务器错误'

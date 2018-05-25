@@ -1,9 +1,9 @@
-[2018-03-28T14:17:22.437] [ERROR] error - 
+[2018-03-27T22:30:44.879] [ERROR] error - 
         GET 
         /user/test?account=xugang 
         401 
         req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -17,12 +17,61 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T14:17:22.422] [ERROR] error - 
+[2018-03-27T22:30:44.889] [ERROR] error - 
+        POST 
+        /user/register 
+        401 
+        req: {"{\"account\":\"xugang2\",\"passwd\":\"xu19880816\",\"email\":\"3718010801@qq":{"com\"}":""}} 
+        res: {"code":"no","message":"token不存在或已过期"}
+        errMsg: Authentication Error
+        errStack: UnauthorizedError: Authentication Error
+    at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
+    at jwt (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-jwt/lib/index.js:22:22)
+    at /Users/xugang/mywork/vue/JYblog/server/node_modules/koa-unless/index.js:49:12
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
+    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/log/index.js:7:12
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
+    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
+    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
+    
+[2018-03-27T22:30:46.468] [ERROR] error - 
+        POST 
+        /user/login 
+        500 
+        req: {"{\"account\":\"xugang\",\"passwd\":\"xu19880816\",\"email\":\"371801080@qq":{"com\"}":""}} 
+        res: 
+        errMsg: ER_BAD_NULL_ERROR: Column 'user_name' cannot be null
+        errStack: Error: ER_BAD_NULL_ERROR: Column 'user_name' cannot be null
+    at Query.Sequence._packetToError (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:52:14)
+    at Query.ErrorPacket (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    --------------------
+    at Protocol._enqueue (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at PoolConnection.query (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/Connection.js:208:25)
+    at pool.getConnection (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:22:28)
+    at Handshake.onConnect [as _callback] (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/Pool.js:64:7)
+    at Handshake.Sequence.end (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:88:24)
+    at Handshake.Sequence.OkPacket (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/sequences/Sequence.js:97:8)
+    at Protocol._parsePacket (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:279:23)
+    at Parser.write (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/Connection.js:103:28)
+    
+[2018-03-27T22:32:05.423] [ERROR] error - 
         POST 
         /user/register 
         401 
         req: {"account":"xugang2","passwd":"xu19880816","email":"3718010801@qq.com"} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -36,12 +85,12 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T15:42:49.921] [ERROR] error - 
+[2018-03-27T22:32:05.426] [ERROR] error - 
         GET 
         /user/test?account=xugang 
         401 
         req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -55,12 +104,12 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T15:42:50.643] [ERROR] error - 
-        GET 
-        /favicon.ico 
+[2018-03-27T22:32:16.034] [ERROR] error - 
+        POST 
+        /user/register 
         401 
-        req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        req: {"account":"xugang2","passwd":"xu19880816","email":"3718010801@qq.com"} 
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -74,50 +123,12 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T15:43:17.395] [ERROR] error - 
-        GET 
-        /user/test?account=xugang 
-        401 
-        req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
-        errMsg: Authentication Error
-        errStack: UnauthorizedError: Authentication Error
-    at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
-    at jwt (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-jwt/lib/index.js:22:22)
-    at /Users/xugang/mywork/vue/JYblog/server/node_modules/koa-unless/index.js:49:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/log/index.js:7:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    
-[2018-03-28T15:43:18.100] [ERROR] error - 
-        GET 
-        /favicon.ico 
-        401 
-        req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
-        errMsg: Authentication Error
-        errStack: UnauthorizedError: Authentication Error
-    at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
-    at jwt (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-jwt/lib/index.js:22:22)
-    at /Users/xugang/mywork/vue/JYblog/server/node_modules/koa-unless/index.js:49:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/log/index.js:7:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    
-[2018-03-28T15:45:15.908] [ERROR] error - 
+[2018-03-27T22:32:16.038] [ERROR] error - 
         GET 
         /user/test?account=xugang 
         401 
         req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -131,12 +142,12 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T15:45:15.952] [ERROR] error - 
-        GET 
-        /favicon.ico 
+[2018-03-27T22:38:44.492] [ERROR] error - 
+        POST 
+        /user/register 
         401 
-        req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        req: {"account":"xugang2","passwd":"xu19880816","email":"3718010801@qq.com"} 
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
@@ -150,31 +161,12 @@
     at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
     at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
     
-[2018-03-28T15:45:51.926] [ERROR] error - 
+[2018-03-27T22:38:44.495] [ERROR] error - 
         GET 
         /user/test?account=xugang 
         401 
         req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
-        errMsg: Authentication Error
-        errStack: UnauthorizedError: Authentication Error
-    at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
-    at jwt (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-jwt/lib/index.js:22:22)
-    at /Users/xugang/mywork/vue/JYblog/server/node_modules/koa-unless/index.js:49:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/log/index.js:7:12
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    at next (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:43:18)
-    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
-    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa-compose/index.js:42:32)
-    
-[2018-03-28T15:45:52.030] [ERROR] error - 
-        GET 
-        /favicon.ico 
-        401 
-        req: {} 
-        res: {"code":"401","message":"token不存在或已过期"}
+        res: {"code":"no","message":"token不存在或已过期"}
         errMsg: Authentication Error
         errStack: UnauthorizedError: Authentication Error
     at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/koa/lib/context.js:93:11)
