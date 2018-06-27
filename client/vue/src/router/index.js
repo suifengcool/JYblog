@@ -2,68 +2,73 @@
  * const Home = resolve => require(['./pages/Home.vue'], resolve)
  *
  * 定义路由
+ * 相对 ./pages
  * const routes = [
  *     { path: '/', component: resolve => require(['./pages/Home.vue'], resolve) }
  * ]
  */
 
-// 页面路径(相对 ./pages)
-let config = [
+// 官网相关路由
+let home_config = [
     '/home/index',                    // 首页
-
     '/demo/index',                    // demo首页
     '/demo/todo',                     // todo
-
-    '/login/index',                   // 登录
+    '/component/index',               // 组件
+    '/about/index',                   // 关于我
 ]
 
-let config1 = [
-    '/article/index',                  // 文章管理
-    '/picture/index',                  // 图片管理
-    '/classify/index',                 // 分类管理
-    '/video/index',                    // 视频管理
-    '/user/index',                     // 管理员列表
+// 登录、注册
+let config = [
+    '/login/index',                   // 登录
+    '/register/index',                // 注册
+]
+
+// 管理后台相关路由
+let manage_config = [
+    '/article/index',                 // 文章管理
+    '/picture/index',                 // 图片管理
+    '/classify/index',                // 分类管理
+    '/video/index',                   // 视频管理
+    '/user/index',                    // 管理员列表
 ]
 
 // 定义路由
-const routes = [], home_routes = [], user_routes = [];
-
-// 解析路由配置，添加进routes
-config.forEach((value, index, arr) => {
-    routes.push({
-        path: value.replace(/(\/index|home\/index)$/g, ''),
+const relativePath = '';
+const routes = [
+    ...parseRoutes(config),
+    {
+        path: '/',
         component: resolve => require(
-            [ '../pages' + value.replace(/\/(\:|\?)[A-z]+$/g, '') + '.vue' ],
+            ['../components/LayoutHome.vue'],
             resolve
-        )
-    })
-})
-
-// 解析官网页面路由配置，添加进routes
-config1.forEach((value, index, arr) => {
-    user_routes.push({
-        path: value.replace(/(\/index|home\/index)$/g, ''),
+        ),
+        children: parseRoutes(home_config)
+    },{
+        path: '/',
         component: resolve => require(
-            [ '../pages' + value.replace(/\/(\:|\?)[A-z]+$/g, '') + '.vue' ],
+            ['../components/LayoutManage.vue'],
             resolve
-        )
-    })
-})
+        ),
+        children: parseRoutes(manage_config)
+    },{
+        path: '*',
+        component: resolve => require(['../pages/404.vue'], resolve)
+    }
+]
 
-// 后台管理相关路由
-routes.push({
-    path: '/',
-    component: resolve => require(
-        ['../components/LayoutLoggedIn.vue'],
-        resolve
-    ),
-    children: user_routes
-})
+// 工厂函数：解析路由配置，返回routes数组
+function parseRoutes(config) {
+    return [
+        ...config.map((value, index) => {
+            let array = value.split(',')
+            const fileName = array[0].replace(/\/(\:|\?)[A-z]+$/g, '')
 
-// 404 页面
-routes.push({
-    path: '*',
-    component: resolve => require(['../pages/404.vue'], resolve)
-})
+            return {
+                path: relativePath + array[0].replace(/(\/index|home\/index)$/g, ''),
+                component: resolve => require([`../pages${fileName}.vue`], resolve)
+            }
+        })
+    ]
+}
 
 export default routes

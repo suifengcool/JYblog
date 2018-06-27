@@ -108,7 +108,6 @@ export default {
 }
 </script>
 <style lang="less" scope>
-/* afsd*/
 .StartHere {
   height: 100vh;
   position: absolute;

@@ -1,20 +1,15 @@
 <template>
     <div class="layoutHome">
-        <NavBar></NavBar>
+        <Header></Header>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+import Header from './Header.vue'
 export default{
     name: 'layoutHome',
-    components: { NavBar },
-    data(){
-        return {
-
-        }    
-    }
+    components: { Header }
 }
 </script>
 
