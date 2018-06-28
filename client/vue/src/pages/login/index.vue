@@ -49,6 +49,7 @@ export default {
     },
 
     created () {
+        vm.config.title('登录')
     },
 
     methods: {
@@ -59,7 +60,7 @@ export default {
         submit() {
             this.$refs.loginForm.validate(val => {
                 if(val){
-                    vm.fetch.post('/users/login',this.form).then(data=>{
+                    vm.fetch.post('/user/login',this.form).then(data=>{
                         console.log('data:',data)
                         if(data && data.resultCode === 200){
                             vm.$message({
@@ -88,7 +89,7 @@ export default {
     .login
         position: absolute
         top: 45%
-        left: 50%
+        left: 45%
         margin: -160px 0 0 -160px
         width: 320px
         height: 320px

@@ -3,11 +3,11 @@ const config = {
     dev: {
         port: 3000,
         db:{
-            host: 'sql.m77.vhostgo.com',
+            host: '127.0.0.1',
             port: 3306,
-            user: 'suifengcool',
-            password: 'xu19880816',
-            database: 'suifengcool'
+            user: 'root',
+            password: '123456',
+            database: 'blog'
         },
         secret: 'suifeng',                   // jwt生成token私钥
         salt: 'suifengcool123',              // md5加密盐值

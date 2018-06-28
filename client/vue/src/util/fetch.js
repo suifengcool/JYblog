@@ -1,5 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
+import { Message, MessageBox } from 'element-ui'
 
 let cancel ,promiseArr = {}
 const CancelToken = axios.CancelToken;
@@ -21,8 +22,8 @@ axios.interceptors.request.use(config => {
 //响应拦截器即异常处理
 axios.interceptors.response.use(response => {
 	return response
-}, error => {
-	if(error && err.response) {
+}, err => {
+	if(err && err.response) {
 		switch (err.response.status) {
 			case 400:
 				err.message = '错误请求'
@@ -33,8 +34,8 @@ axios.interceptors.response.use(response => {
 	}else{
 	  err.message = "连接到服务器失败"
 	}
-	message.error(err.message)
-	return Promise.resolve(error.response)
+	Message.error(err.message)
+	return Promise.resolve(err.response)
 })
 
 axios.defaults.baseURL = '/api'
@@ -63,16 +64,20 @@ export default {
 
 	//post请求
 	post (url,param) {
+		console.log('param:',param)
 	    return new Promise((resolve,reject) => {
 			axios({
 			    method: 'post',
 			    url,
-			    data: qs.stringify(param),
+			    // data: qs.stringify(param),
+			    data: param,
 			    cancelToken: new CancelToken(c => {
 				    cancel = c
 			    })
 			}).then(res => {
 			    resolve(res)
+			}).catch(err=>{
+				reject(err)
 			})
 	    })
 	}

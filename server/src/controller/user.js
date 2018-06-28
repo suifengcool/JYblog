@@ -94,6 +94,8 @@ class UserController {
     * 登录
     */
     static async login(ctx) {
+
+    	console.log('ctx:',ctx.request.body)
 		let { account, passwd } = ctx.request.body
 		
 		try{

@@ -144,7 +144,7 @@ export default {
   },
 
   created() {
-      vm.config.title('注册')
+    vm.config.title('注册')
   },
   methods: {
     // 提交注册
@@ -247,7 +247,6 @@ export default {
       height: 430px;
       padding-left: 30px;
       padding-right: 30px;
-      border-radius: 20px;
       margin-right: 40%;
       padding-top: 30px;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.08);
