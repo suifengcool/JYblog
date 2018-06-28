@@ -1,8 +1,8 @@
 /* 分块定义异步组件 使用 AMD 风格的 require
  * const Home = resolve => require(['./pages/Home.vue'], resolve)
  *
- * 定义路由
- * 相对 ./pages
+ * 定义路由(相对 ./pages)
+ * 
  * const routes = [
  *     { path: '/', component: resolve => require(['./pages/Home.vue'], resolve) }
  * ]

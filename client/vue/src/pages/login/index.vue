@@ -13,6 +13,9 @@
             <FormItem  label=""  prop="password">
                 <Input type="password" v-model="form.password" auto-complete="off" prefix-icon="Icon-date" placeholder="Password" size="medium" @focus="focus(3)" @blur="imgType = 1"/>
             </FormItem>
+            <FormItem  label=""  class="register">
+                <p>没有账号？<i @click="$router.push('/register')">前去注册</i></p>
+            </FormItem>
             <div class="btn">
                 <Button class="active" @click="submit">登录</Button>
                 <Button @click="$router.push('/')">回到首页</Button>
@@ -121,4 +124,12 @@ export default {
 
         .el-input--prefix .el-input__inner
             padding-left: 10px
+        .register
+            margin: -15px 0 5px 0
+            p
+                text-align: right
+                color: #979797
+                i 
+                    color: #409EFF
+                    cursor: pointer
 </style>
