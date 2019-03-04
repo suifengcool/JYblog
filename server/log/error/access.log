@@ -257,3 +257,91 @@
     at Protocol.write (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/protocol/Protocol.js:39:16)
     at Socket.<anonymous> (/Users/xugang/mywork/vue/JYblog/server/node_modules/mysql/lib/Connection.js:103:28)
     
+[2018-09-21T15:53:10.138] [ERROR] error - 
+        POST 
+        /user/login 
+        500 
+        req: {"userName":"15827601003","password":"123456"} 
+        res: 
+        errMsg: connect ECONNREFUSED 127.0.0.1:3306
+        errStack: Error: connect ECONNREFUSED 127.0.0.1:3306
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)
+    --------------------
+    at Protocol._enqueue (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Pool.js:48:16)
+    at Promise (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:18:14)
+    at new Promise (<anonymous>)
+    at Object.query [as QUERY] (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:17:12)
+    at Object.login [as LOGIN] (/Users/xugang/mywork/vue/JYblog/server/src/models/user.js:32:30)
+    at login (/Users/xugang/mywork/vue/JYblog/server/src/controller/user.js:102:20)
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.3.2.1@koa-compose/index.js:44:32)
+    
+[2018-09-21T15:53:11.817] [ERROR] error - 
+        POST 
+        /user/login 
+        500 
+        req: {"userName":"15827601003","password":"123456"} 
+        res: 
+        errMsg: connect ECONNREFUSED 127.0.0.1:3306
+        errStack: Error: connect ECONNREFUSED 127.0.0.1:3306
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)
+    --------------------
+    at Protocol._enqueue (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Pool.js:48:16)
+    at Promise (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:18:14)
+    at new Promise (<anonymous>)
+    at Object.query [as QUERY] (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:17:12)
+    at Object.login [as LOGIN] (/Users/xugang/mywork/vue/JYblog/server/src/models/user.js:32:30)
+    at login (/Users/xugang/mywork/vue/JYblog/server/src/controller/user.js:102:20)
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.3.2.1@koa-compose/index.js:44:32)
+    
+[2018-09-21T15:53:21.423] [ERROR] error - 
+        POST 
+        /user/login 
+        500 
+        req: {"userName":"15827601003","password":"123456"} 
+        res: 
+        errMsg: connect ECONNREFUSED 127.0.0.1:3306
+        errStack: Error: connect ECONNREFUSED 127.0.0.1:3306
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)
+    --------------------
+    at Protocol._enqueue (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.16.0@mysql/lib/Pool.js:48:16)
+    at Promise (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:18:14)
+    at new Promise (<anonymous>)
+    at Object.query [as QUERY] (/Users/xugang/mywork/vue/JYblog/server/src/util/mysql.js:17:12)
+    at Object.login [as LOGIN] (/Users/xugang/mywork/vue/JYblog/server/src/models/user.js:32:30)
+    at login (/Users/xugang/mywork/vue/JYblog/server/src/controller/user.js:102:20)
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.3.2.1@koa-compose/index.js:44:32)
+    
+[2018-09-21T15:55:41.770] [ERROR] error - 
+        GET 
+        /articles/system/qiniu 
+        401 
+        req: {} 
+        res: {"code":"401","message":"token不存在或已过期"}
+        errMsg: Authentication Error
+        errStack: UnauthorizedError: Authentication Error
+    at Object.throw (/Users/xugang/mywork/vue/JYblog/server/node_modules/.2.5.3@koa/lib/context.js:96:11)
+    at jwt (/Users/xugang/mywork/vue/JYblog/server/node_modules/.3.5.1@koa-jwt/lib/index.js:23:22)
+    at /Users/xugang/mywork/vue/JYblog/server/node_modules/.1.0.7@koa-unless/index.js:29:12
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.4.1.0@koa-compose/index.js:42:32)
+    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/log/index.js:7:12
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.4.1.0@koa-compose/index.js:42:32)
+    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/error/index.js:12:19
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.4.1.0@koa-compose/index.js:42:32)
+    at /Users/xugang/mywork/vue/JYblog/server/src/middleware/json/index.js:9:9
+    at dispatch (/Users/xugang/mywork/vue/JYblog/server/node_modules/.4.1.0@koa-compose/index.js:42:32)
+    
